@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT乙级1002 Python实现]]></title>
+    <url>%2F2017%2F07%2F26%2F%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[PAT (Basic Level) Practise1002 写出这个数读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。 输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10100。 输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。 12输入样例：1234567890987654321123456789 12输出样例：yi san wu 思路 输入一个纯数字的字符串，把每一位字符转换成int型相加，再把相加得数按从最大位到最小位顺序，用拼音输出。使用int()转换字符成整数，再用一个list预先保存数字的拼音 代码实现123456789str_s=input()sum=0f=[&apos;ling&apos;,&apos;yi&apos;,&apos;er&apos;,&apos;san&apos;,&apos;si&apos;,&apos;wu&apos;,&apos;liu&apos;,&apos;qi&apos;,&apos;ba&apos;,&apos;jiu&apos;]for i in range(len(str_s)): sum=sum+int(str_s[i])for i in range(len(str(sum))): if i: print(&apos; &apos;,end=&apos;&apos;) print(&apos;%s&apos;%(f[int(str(sum)[i])]),end=&apos;&apos;)]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT乙级1003 Python实现]]></title>
+    <url>%2F2017%2F07%2F26%2F%E6%88%91%E8%A6%81%E9%80%9A%E8%BF%87!%2F</url>
+    <content type="text"><![CDATA[PAT (Basic Level) Practise1003 我要通过“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。 得到“答案正确”的条件是： 字符串中必须仅有P, A, T这三种字符，不可以包含其它字符； 任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串； 如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a, b, c 均或者是空字符串，或者是仅由字母 A 组成的字符串。 现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。输入格式： 每个测试输入包含1个测试用例。第1行给出一个自然数n (&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。 输出格式：每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。 12345678910输入样例：8PATPAATAAPATAAAAPAATAAAAxPATxPTWhateverAPAAATAA 123456789输出样例：YESYESYESYESNONONONO 思路 观察样例分析三个条件可得aPbTc形式中，a字符串包含的‘A’数目和b字符串中包含的‘A’的数目之积要等于c字符串中包含的‘A’的数目，也就是a*b=c，并且b不能等于零，P和T有切只能出现一次。第二个测试点有可能是‘P T’，我加了判断b是否有‘A’的判断就通过了 代码实现123456789101112131415161718192021222324n=int(input())res=[]for i in range(n): str_s=input() p=a1=a2=a3=t=k=0 for j in range(len(str_s)): if str_s[j]!=&apos;P&apos; and str_s[j]!=&apos;A&apos; and str_s[j]!=&apos;T&apos; and str_s[j]!=&apos; &apos;: k=1 elif str_s[j]==&apos;P&apos;: p+=1 elif str_s[j]==&apos;A&apos; and p==0: a1=a1+1 elif str_s[j]==&apos;A&apos; and p and t==0: a2=a2+1 elif str_s[j]==&apos;A&apos; and p and t: a3=a3+1 elif str_s[j]==&apos;T&apos;: t+=1 if p==1 and a1*a2==a3 and a1+a2+a3 and t==1 and k==0 and a2: res.append(&apos;YES&apos;) else: res.append(&apos;NO&apos;)for i in range(n): print(&apos;%s&apos;%(res[i]))]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT乙级1001 Python实现]]></title>
     <url>%2F2017%2F07%2F26%2F%E5%AE%B3%E6%AD%BB%E4%BA%BA%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%84(3n%2B1)%E7%8C%9C%E6%83%B3%2F</url>
     <content type="text"><![CDATA[PAT (Basic Level) Practise1001 害死人不偿命的(3n+1)猜想卡拉兹(Callatz)猜想： 对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展…… 我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？ 输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。 输出格式：输出从n计算到1需要的步数。 12输入样例：3 12输出样例：5 思路 使用int(input())读入n，之后while循环得出答案 代码实现12345678910n=int(input())sum=0while n!=1: sum=sum+1 if n%2==0: n=n/2 else: n=n*3+1 n=n/2print(&apos;%d&apos;%(sum))]]></content>
       <categories>
-        <category>题目</category>
+        <category>题解</category>
       </categories>
       <tags>
         <tag>Python</tag>

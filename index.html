@@ -298,6 +298,314 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/26/写出这个数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Verse">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar3.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Verse's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/26/写出这个数/" itemprop="url">PAT乙级1002 Python实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T23:55:30+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/26/写出这个数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/26/写出这个数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="PAT-Basic-Level-Practise"><a href="#PAT-Basic-Level-Practise" class="headerlink" title="PAT (Basic Level) Practise"></a>PAT (Basic Level) Practise</h3><h2 id="1002-写出这个数"><a href="#1002-写出这个数" class="headerlink" title="1002 写出这个数"></a>1002 写出这个数</h2><p>读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10100。</p>
+<p>输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">输入样例：</div><div class="line">1234567890987654321123456789</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">输出样例：</div><div class="line">yi san wu</div></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong> 输入一个纯数字的字符串，把每一位字符转换成int型相加，再把相加得数按从最大位到最小位顺序，用拼音输出。使用int()转换字符成整数，再用一个list预先保存数字的拼音 </strong></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">str_s=input()</div><div class="line">sum=0</div><div class="line">f=[&apos;ling&apos;,&apos;yi&apos;,&apos;er&apos;,&apos;san&apos;,&apos;si&apos;,&apos;wu&apos;,&apos;liu&apos;,&apos;qi&apos;,&apos;ba&apos;,&apos;jiu&apos;]</div><div class="line">for i in range(len(str_s)):</div><div class="line">    sum=sum+int(str_s[i])</div><div class="line">for i in range(len(str(sum))):</div><div class="line">    if i:</div><div class="line">        print(&apos; &apos;,end=&apos;&apos;)</div><div class="line">    print(&apos;%s&apos;%(f[int(str(sum)[i])]),end=&apos;&apos;)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/26/我要通过!/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Verse">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar3.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Verse's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/26/我要通过!/" itemprop="url">PAT乙级1003 Python实现</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T23:55:30+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/26/我要通过!/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/26/我要通过!/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="PAT-Basic-Level-Practise"><a href="#PAT-Basic-Level-Practise" class="headerlink" title="PAT (Basic Level) Practise"></a>PAT (Basic Level) Practise</h3><h2 id="1003-我要通过"><a href="#1003-我要通过" class="headerlink" title="1003 我要通过"></a>1003 我要通过</h2><p>“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。</p>
+<p>得到“答案正确”的条件是：</p>
+<ol>
+<li>字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；</li>
+<li>任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串；</li>
+<li>如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a, b, c 均或者是空字符串，或者是仅由字母 A 组成的字符串。</li>
+</ol>
+<p>现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。<br>输入格式： 每个测试输入包含1个测试用例。第1行给出一个自然数n (&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。</p>
+<p>输出格式：每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">输入样例：</div><div class="line">8</div><div class="line">PAT</div><div class="line">PAAT</div><div class="line">AAPATAA</div><div class="line">AAPAATAAAA</div><div class="line">xPATx</div><div class="line">PT</div><div class="line">Whatever</div><div class="line">APAAATAA</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">输出样例：</div><div class="line">YES</div><div class="line">YES</div><div class="line">YES</div><div class="line">YES</div><div class="line">NO</div><div class="line">NO</div><div class="line">NO</div><div class="line">NO</div></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong> 观察样例分析三个条件可得aPbTc形式中，a字符串包含的‘A’数目和b字符串中包含的‘A’的数目之积要等于c字符串中包含的‘A’的数目，也就是a*b=c，并且b不能等于零，P和T有切只能出现一次。第二个测试点有可能是‘P T’，我加了判断b是否有‘A’的判断就通过了 </strong></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">n=int(input())</div><div class="line">res=[]</div><div class="line">for i in range(n):</div><div class="line">    str_s=input()</div><div class="line">    p=a1=a2=a3=t=k=0</div><div class="line">    for j in range(len(str_s)):</div><div class="line">        if str_s[j]!=&apos;P&apos; and str_s[j]!=&apos;A&apos; and str_s[j]!=&apos;T&apos; and str_s[j]!=&apos; &apos;:</div><div class="line">            k=1</div><div class="line">        elif str_s[j]==&apos;P&apos;:</div><div class="line">            p+=1</div><div class="line">        elif str_s[j]==&apos;A&apos; and p==0:</div><div class="line">            a1=a1+1</div><div class="line">        elif str_s[j]==&apos;A&apos; and p and t==0:</div><div class="line">            a2=a2+1</div><div class="line">        elif str_s[j]==&apos;A&apos; and p and t:</div><div class="line">            a3=a3+1</div><div class="line">        elif str_s[j]==&apos;T&apos;:</div><div class="line">            t+=1</div><div class="line">    if p==1 and a1*a2==a3 and a1+a2+a3 and t==1 and k==0 and a2:</div><div class="line">        res.append(&apos;YES&apos;)</div><div class="line">    else:</div><div class="line">        res.append(&apos;NO&apos;)</div><div class="line">for i in range(n):</div><div class="line">    print(&apos;%s&apos;%(res[i]))</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/26/害死人不偿命的(3n+1)猜想/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,8 +660,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/题目/" itemprop="url" rel="index">
-                    <span itemprop="name">题目</span>
+                  <a href="/categories/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
                   </a>
                 </span>
 
@@ -619,7 +927,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
