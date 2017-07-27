@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT乙级1004 Python实现]]></title>
+    <url>%2F2017%2F07%2F27%2F%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D%2F</url>
+    <content type="text"><![CDATA[PAT (Basic Level) Practise1004 成绩排名读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。 输入格式：每个测试输入包含1个测试用例，格式为 第1行：正整数n 第2行：第1个学生的姓名 学号 成绩 第3行：第2个学生的姓名 学号 成绩 … … … 第n+1行：第n个学生的姓名 学号 成绩其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。输出格式：对每个测试用例输出2行，第1行是成绩最高学生的姓名和学号，第2行是成绩最低学生的姓名和学号，字符串间有1空格。 12345输入样例：3Joe Math990112 89Mike CS991301 100Mary EE990830 95 123输出样例：Mike CS991301Joe Math990112 思路 使用split()分割输入的字符串，成绩放入list中，再把成绩和姓名学号在dict中对应起来 代码实现123456789n=int(input())li=[]d=&#123;&#125;while n&gt;0: str_s=input().split() li.append(int(str_s[2])) d[str_s[2]]=str_s[0]+&apos; &apos;+str_s[1] n-=1print(&apos;%s\n%s&apos;%(d[str(max(li))],d[str(min(li))]),end=&apos;&apos;)]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT乙级1005 Python实现]]></title>
+    <url>%2F2017%2F07%2F27%2F%E7%BB%A7%E7%BB%AD(3n%2B1)%E7%8C%9C%E6%83%B3%2F</url>
+    <content type="text"><![CDATA[PAT (Basic Level) Practise1005 继续（3n+1）猜想卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。 当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆盖”的数。我们称一个数列中的某个数n为“关键数”，如果n不能被数列中的其他数字所覆盖。 现在给定一系列待验证的数字，我们只需要验证其中的几个关键数，就可以不必再重复验证余下的数字。你的任务就是找出这些关键数字，并按从大到小的顺序输出它们。 输入格式：每个测试输入包含1个测试用例，第1行给出一个正整数K(&lt;100)，第2行给出K个互不相同的待验证的正整数n(1&lt;n&lt;=100)的值，数字间用空格隔开。 输出格式：每个测试用例的输出占一行，按从大到小的顺序输出关键数字。数字间用1个空格隔开，但一行中最后一个数字后没有空格。 123输入样例：63 5 6 7 8 11 12输出样例：7 6 思路 把所有计算过程中出现的数字放入set中，把输入的数据转换成int再降序排序（重要，错在这里了，str排序和int排序是不同的），再判断是否在set中出现，没出现的输出 代码实现123456789101112131415161718k=int(input())cov=set([])str_s=input().split()def fun(n): if n in cov: return while n!=1: if n%2==0: n/=2 else: n=(3*n+1)/2 cov.add(int(n))for i in str_s: fun(int(i))res=[int(i) for i in str_s]res.sort(reverse=True)count=0for i in res: if i not in cov: if count: print(&apos; &apos;,end=&apos;&apos;) print(i,end=&apos;&apos;) count+=1]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT乙级1002 Python实现]]></title>
     <url>%2F2017%2F07%2F26%2F%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0%2F</url>
     <content type="text"><![CDATA[PAT (Basic Level) Practise1002 写出这个数读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。 输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10100。 输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。 12输入样例：1234567890987654321123456789 12输出样例：yi san wu 思路 输入一个纯数字的字符串，把每一位字符转换成int型相加，再把相加得数按从最大位到最小位顺序，用拼音输出。使用int()转换字符成整数，再用一个list预先保存数字的拼音 代码实现123456789str_s=input()sum=0f=[&apos;ling&apos;,&apos;yi&apos;,&apos;er&apos;,&apos;san&apos;,&apos;si&apos;,&apos;wu&apos;,&apos;liu&apos;,&apos;qi&apos;,&apos;ba&apos;,&apos;jiu&apos;]for i in range(len(str_s)): sum=sum+int(str_s[i])for i in range(len(str(sum))): if i: print(&apos; &apos;,end=&apos;&apos;) print(&apos;%s&apos;%(f[int(str(sum)[i])]),end=&apos;&apos;)]]></content>
@@ -35,10 +59,5 @@
         <tag>Python</tag>
         <tag>PAT</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F07%2F26%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
