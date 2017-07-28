@@ -298,6 +298,151 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/2048 C++实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Verse">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar3.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Verse's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/28/2048 C++实现/" itemprop="url">C++实现2048 控制台界面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T17:31:32+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小玩意/" itemprop="url" rel="index">
+                    <span itemprop="name">小玩意</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/28/2048 C++实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/28/2048 C++实现/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="2048-C-实现-控制台界面"><a href="#2048-C-实现-控制台界面" class="headerlink" title="2048 C++实现 控制台界面"></a>2048 C++实现 控制台界面</h2><p>实现思路很简单，没有任何算法，一百五十几行代码，试试水。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;conio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> board[<span class="number">4</span>][<span class="number">4</span>],score=<span class="number">0</span>;<span class="comment">//board记录方块状态，score记录得分情况</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">random</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> <span class="comment">//产生随机数函数</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> rand()%(b-a)+a;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Interface</span><span class="params">()</span> <span class="comment">//界面函数</span></span></div><div class="line">&#123;</div><div class="line">	system(<span class="string">"cls"</span>);</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">40</span>)&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="string">"-----------------------"</span>&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">40</span>)&lt;&lt;<span class="string">'|'</span>&lt;&lt;setw(<span class="number">17</span>)&lt;&lt;<span class="string">"2048 by wsw"</span>&lt;&lt;setw(<span class="number">7</span>)&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">40</span>)&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="string">"-----------------------"</span>&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">40</span>)&lt;&lt;<span class="string">'|'</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(board[i][j])	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">5</span>)&lt;&lt;board[i][j]&lt;&lt;<span class="string">'|'</span>;</div><div class="line">			<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;setw(<span class="number">5</span>)&lt;&lt;<span class="string">' '</span>&lt;&lt;<span class="string">'|'</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;setw(<span class="number">40</span>)&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="string">"-----------------------"</span>&lt;&lt;<span class="string">'|'</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">40</span>)&lt;&lt;<span class="string">" "</span>&lt;&lt;<span class="string">"Score: "</span>&lt;&lt;score&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="comment">//初始化函数</span></span></div><div class="line">&#123;</div><div class="line">	system(<span class="string">"cls"</span>);</div><div class="line">	score=<span class="number">0</span>;</div><div class="line">	<span class="built_in">memset</span>(board,<span class="number">0</span>,<span class="keyword">sizeof</span> board);</div><div class="line">	<span class="keyword">int</span> xy[<span class="number">4</span>];</div><div class="line">  srand((<span class="keyword">unsigned</span>)time(<span class="number">0</span>)); <span class="comment">//随机种子</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)	xy[i]=random(<span class="number">0</span>,<span class="number">4</span>);</div><div class="line">	board[xy[<span class="number">0</span>]][xy[<span class="number">1</span>]]=board[xy[<span class="number">2</span>]][xy[<span class="number">3</span>]]=<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">end</span><span class="params">()</span> <span class="comment">//判断游戏是否结束</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(!board[i][j])	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		<span class="keyword">int</span> x1=i+<span class="number">1</span>,y1=j+<span class="number">1</span>,x2=i<span class="number">-1</span>,y2=j<span class="number">-1</span>;</div><div class="line">		<span class="keyword">if</span>(y1&gt;=<span class="number">0</span>&amp;&amp;y1&lt;<span class="number">4</span>&amp;&amp;board[i][j]==board[i][y1])	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		<span class="keyword">if</span>(y2&gt;=<span class="number">0</span>&amp;&amp;y2&lt;<span class="number">4</span>&amp;&amp;board[i][j]==board[i][y2])	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		<span class="keyword">if</span>(x1&gt;=<span class="number">0</span>&amp;&amp;x1&lt;<span class="number">4</span>&amp;&amp;board[i][j]==board[x1][j])	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		<span class="keyword">if</span>(x2&gt;=<span class="number">0</span>&amp;&amp;x2&lt;<span class="number">4</span>&amp;&amp;board[i][j]==board[x2][j])	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">gene</span><span class="params">()</span> <span class="comment">//随机生成2或4</span></span></div><div class="line">&#123;</div><div class="line">	Sleep(<span class="number">100</span>); <span class="comment">//暂停处理</span></div><div class="line">	<span class="keyword">if</span>(end())	<span class="keyword">return</span>;</div><div class="line">	<span class="keyword">int</span> x=random(<span class="number">0</span>,<span class="number">4</span>),y=random(<span class="number">0</span>,<span class="number">4</span>);</div><div class="line">	srand((<span class="keyword">unsigned</span>)time(<span class="number">0</span>));</div><div class="line">	<span class="keyword">while</span>(board[x][y])&#123;</div><div class="line">		x=random(<span class="number">0</span>,<span class="number">4</span>);y=random(<span class="number">0</span>,<span class="number">4</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> val=<span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>(val%<span class="number">2</span>)	val=random(<span class="number">2</span>,<span class="number">5</span>);</div><div class="line">	board[x][y]=val;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">control</span><span class="params">()</span> <span class="comment">//控制函数</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">char</span> c;</div><div class="line">	c=getch(); <span class="comment">//直接获取键盘按键</span></div><div class="line">	<span class="keyword">int</span> act=<span class="number">0</span>,m=<span class="number">0</span>;</div><div class="line">  <span class="comment">//先把每行每列的数据导入num数组中，再在数组中处理，处理完再倒回board数组</span></div><div class="line">  <span class="comment">//act记录是否有动作发生（移动，相加），m控制每次每行每列只允许发生一次相加</span></div><div class="line">	<span class="keyword">if</span>(c==<span class="string">'w'</span>||c==<span class="string">'W'</span>)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</div><div class="line">	    &#123;</div><div class="line">	    	<span class="keyword">int</span> num[<span class="number">4</span>],k=<span class="number">0</span>,m=<span class="number">0</span>;</div><div class="line">	    	<span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span> num);</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(board[j][i])	num[k++]=board[j][i];</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</div><div class="line">	    		<span class="keyword">if</span>(num[j]==num[j+<span class="number">1</span>]&amp;&amp;num[j]&amp;&amp;!m)&#123;</div><div class="line">	    			num[j]+=num[j+<span class="number">1</span>];num[j+<span class="number">1</span>]=<span class="number">0</span>;score+=<span class="number">2</span>*num[j];m=<span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j]!=board[j][i])	act=<span class="number">1</span>;</div><div class="line">	    	k=<span class="number">0</span>;</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j])	board[k++][i]=num[j];</div><div class="line">	    	<span class="keyword">while</span>(k&lt;<span class="number">4</span>)	board[k++][i]=<span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'s'</span>||c==<span class="string">'S'</span>)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</div><div class="line">	    &#123;</div><div class="line">	    	<span class="keyword">int</span> num[<span class="number">4</span>],k=<span class="number">0</span>,m=<span class="number">0</span>;</div><div class="line">	    	<span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span> num);</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">3</span>;j&gt;=<span class="number">0</span>;j--)	<span class="keyword">if</span>(board[j][i])	num[k++]=board[j][i];</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</div><div class="line">	    		<span class="keyword">if</span>(num[j]==num[j+<span class="number">1</span>]&amp;&amp;num[j]&amp;&amp;!m)&#123;</div><div class="line">	    			num[j]+=num[j+<span class="number">1</span>];num[j+<span class="number">1</span>]=<span class="number">0</span>;score+=<span class="number">2</span>*num[j];m=<span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j]!=board[<span class="number">3</span>-j][i])	act=<span class="number">1</span>;</div><div class="line">	    	k=<span class="number">3</span>;</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j])	board[k--][i]=num[j];</div><div class="line">	    	<span class="keyword">while</span>(k&gt;=<span class="number">0</span>)	board[k--][i]=<span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'a'</span>||c==<span class="string">'A'</span>)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</div><div class="line">	    &#123;</div><div class="line">	    	<span class="keyword">int</span> num[<span class="number">4</span>],k=<span class="number">0</span>,m=<span class="number">0</span>;</div><div class="line">	    	<span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span> num);</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(board[i][j])	num[k++]=board[i][j];</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</div><div class="line">	    		<span class="keyword">if</span>(num[j]==num[j+<span class="number">1</span>]&amp;&amp;num[j]&amp;&amp;!m)&#123;</div><div class="line">	    			num[j]+=num[j+<span class="number">1</span>];num[j+<span class="number">1</span>]=<span class="number">0</span>;score+=<span class="number">2</span>*num[j];m=<span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j]!=board[i][j])	act=<span class="number">1</span>;</div><div class="line">	    	k=<span class="number">0</span>;</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j])	board[i][k++]=num[j];</div><div class="line">	    	<span class="keyword">while</span>(k&lt;<span class="number">4</span>)	board[i][k++]=<span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'d'</span>||c==<span class="string">'D'</span>)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</div><div class="line">	    &#123;</div><div class="line">	    	<span class="keyword">int</span> num[<span class="number">4</span>],k=<span class="number">0</span>,m=<span class="number">0</span>;</div><div class="line">	    	<span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span> num);</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">3</span>;j&gt;=<span class="number">0</span>;j--)	<span class="keyword">if</span>(board[i][j])	num[k++]=board[i][j];</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</div><div class="line">	    		<span class="keyword">if</span>(num[j]==num[j+<span class="number">1</span>]&amp;&amp;num[j]&amp;&amp;!m)&#123;</div><div class="line">	    			num[j]+=num[j+<span class="number">1</span>];num[j+<span class="number">1</span>]=<span class="number">0</span>;score+=<span class="number">2</span>*num[j];m=<span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j]!=board[i][<span class="number">3</span>-j])	act=<span class="number">1</span>;</div><div class="line">	    	k=<span class="number">3</span>;</div><div class="line">	    	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)	<span class="keyword">if</span>(num[j])	board[i][k--]=num[j];</div><div class="line">	    	<span class="keyword">while</span>(k&gt;=<span class="number">0</span>)	board[i][k--]=<span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	Interface();</div><div class="line">	<span class="keyword">if</span>(act)	gene();</div><div class="line">	Interface();</div><div class="line">	<span class="keyword">if</span>(!end())	control();</div><div class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Game Over!!!"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> flag=<span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>(flag)</div><div class="line">	&#123;</div><div class="line">		init();</div><div class="line">		Interface();</div><div class="line">		control();</div><div class="line">		system(<span class="string">"pause"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/成绩排名/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1100,7 +1245,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1111,7 +1256,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1122,7 +1267,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
